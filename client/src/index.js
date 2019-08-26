@@ -44,7 +44,7 @@ const Routes = () => {
           </Link>
           <Link className="nav-link" to="/sign-up-interpreter">
             <Menu.Item name="editorials" active={true}>
-              Become Interpreter
+              Interpreter Sign Up
             </Menu.Item>
           </Link>
         </Menu>
