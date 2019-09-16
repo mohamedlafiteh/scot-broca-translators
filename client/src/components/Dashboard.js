@@ -22,9 +22,22 @@ export class Dashboard extends Component {
     const { documents } = this.state;
     const userName = sessionStorage.getItem("userName");
     const userRole = sessionStorage.getItem("userRole");
+    const date = new Date();
+    const hours = date.getHours();
+    let timeOfDay;
+    if (hours < 12) {
+      timeOfDay = "morning";
+    } else if (hours >= 12 && hours < 17) {
+      timeOfDay = "afternoon";
+    } else {
+      timeOfDay = "night";
+    }
     return (
       <Container>
-        <Header as="h2">Hello {userName}!</Header>
+        <Header as="h2">
+          {" "}
+          Good {timeOfDay} {userName}!
+        </Header>
         {userRole === "User" ? (
           <Button onClick={() => this.props.history.push("/add-document")}>
             {" "}
