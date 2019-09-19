@@ -17,6 +17,8 @@ import { isLoggedIn } from "./components/helpers/isLoggedIn";
 import { isUser } from "./components/helpers/isUser";
 import ViewDocument from "./components/ViewDocument";
 
+import CancelTranslation from "./components/CancelTranslation";
+
 const logout = () => {
   sessionStorage.clear();
   window.location.href = "/";
@@ -107,6 +109,7 @@ const Routes = () => {
               )}
 
               <Route path="/document/:id" component={ViewDocument} />
+              <Route path="/translations/:id" component={CancelTranslation} />
             </div>
           ) : null}
         </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import { Table } from "semantic-ui-react";
 import { Link } from "react-router-dom";
+import CancelTranslation from "./CancelTranslation";
 
 const View = props => {
   let { id } = props;
@@ -17,7 +18,7 @@ const ActionColumn = props => {
   if (userRole === "User") {
     return (
       <Table.Cell>
-        <View id={id} />/ <span>Delete</span>
+        <View id={id} />/{" "}
       </Table.Cell>
     );
   } else if (userName === translatorName && status === "Processing") {
@@ -27,6 +28,7 @@ const ActionColumn = props => {
         <Link to={`/add-document-translation/${id}`}>
           <span>Submit Translation</span>
         </Link>
+        <CancelTranslation id={id} />
       </Table.Cell>
     );
   } else {
